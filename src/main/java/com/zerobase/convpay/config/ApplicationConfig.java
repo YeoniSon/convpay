@@ -1,27 +1,37 @@
 package com.zerobase.convpay.config;
 
 import com.zerobase.convpay.service.*;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import java.util.Arrays;
 import java.util.HashSet;
 
+@Configuration
 public class ApplicationConfig {
 
-    public ConveniencePayService conveniencePayServiceDiscountConvenience(){
+    @Bean
+    public ConveniencePayService conveniencePayService(){
         return new ConveniencePayService(
                 new HashSet<>(
-                        Arrays.asList(new MoneyAdapter(), new CardAdapter())
+                        Arrays.asList(moneyAdapter(), getCardAdapter())
                 ),
-                new DiscountByConvenience()
+                discountByConvenience()
         );
-    };
+    }
 
-    public ConveniencePayService conveniencePayServiceDiscountPayMethod(){
-        return new ConveniencePayService(
-                new HashSet<>(
-                        Arrays.asList(new MoneyAdapter(), new CardAdapter())
-                ),
-                new DiscountByPayMethod()
-        );
-    };
+    @Bean
+    public CardAdapter getCardAdapter() {
+        return new CardAdapter();
+    }
+
+    @Bean
+    public MoneyAdapter moneyAdapter() {
+        return new MoneyAdapter();
+    }
+
+    @Bean
+    public DiscountByConvenience discountByConvenience() {
+        return new DiscountByConvenience();
+    }
 }
