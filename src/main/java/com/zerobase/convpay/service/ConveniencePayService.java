@@ -10,6 +10,8 @@ public class ConveniencePayService { //편결이
 
     private static final MoneyAdapter moneyAdapter = new MoneyAdapter();
     private static final CardAdapter cardAdapter = new CardAdapter();
+    private static final DiscountInterface discountInterface = new DiscountByPayMethod();
+//    private static final DiscountInterface discountInterface = new DiscountByConvenience();
 
     public static PayResponse pay(PayRequest payRequest) {
         PaymentInterface paymentInterface;
@@ -20,7 +22,9 @@ public class ConveniencePayService { //편결이
             paymentInterface = moneyAdapter;
         }
 
-        PaymentResult payment = paymentInterface.payment(payRequest.getPayAmount());
+        Integer discountedAmount = discountInterface.getDiscountedAmount(payRequest);
+
+        PaymentResult payment = paymentInterface.payment(discountedAmount);
 
 //        CardUseResult cardUseResult;
 //        MoneyUseResult moneyUseResult;
@@ -51,7 +55,7 @@ public class ConveniencePayService { //편결이
         }
 
         //Success Case(Only one)
-        return new PayResponse(PayResult.SUCCESS, payRequest.getPayAmount());
+        return new PayResponse(PayResult.SUCCESS, discountedAmount);
     }
 
     public static PayCancelResponse payCancel(PayCancelRequest payCancelRequest) {
