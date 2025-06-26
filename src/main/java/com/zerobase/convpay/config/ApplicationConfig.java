@@ -14,14 +14,14 @@ public class ApplicationConfig {
     public ConveniencePayService conveniencePayService(){
         return new ConveniencePayService(
                 new HashSet<>(
-                        Arrays.asList(moneyAdapter(), getCardAdapter())
+                        Arrays.asList(moneyAdapter(), cardAdapter())
                 ),
                 discountByConvenience()
         );
     }
 
     @Bean
-    public CardAdapter getCardAdapter() {
+    public CardAdapter cardAdapter() {
         return new CardAdapter();
     }
 
