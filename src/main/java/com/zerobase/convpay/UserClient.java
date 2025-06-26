@@ -17,10 +17,10 @@ public class UserClient {
         // '사용자' -> 편결이 -> 머니
 
         //applicationContext를 만든 설정파일 참고해서 만들라는 의미
-        ApplicationContext applicationContext =
-                new ClassPathXmlApplicationContext("spring-config.xml");
 //        ApplicationContext applicationContext =
-//                new AnnotationConfigApplicationContext(ApplicationConfig.class);
+//                new ClassPathXmlApplicationContext("spring-config.xml");
+        ApplicationContext applicationContext =
+                new AnnotationConfigApplicationContext(ApplicationConfig.class);
 
         ConveniencePayService conveniencePayService =
                 applicationContext.getBean("conveniencePayService",

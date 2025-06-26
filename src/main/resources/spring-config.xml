@@ -1,25 +1,25 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--       xmlns:context="http://www.springframework.org/schema/context"-->
+<!--       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd-->
+<!--                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">-->
 
-    <context:component-scan base-package="com.zerobase.convpay"/>
+<!--    <context:component-scan base-package="com.zerobase.convpay"/>-->
 
-<!--    <bean id = "conveniencePayService" class = "com.zerobase.convpay.service.ConveniencePayService">-->
-<!--        <constructor-arg name = "paymentInterfaceSet">-->
-<!--            <set>-->
-<!--                <ref bean="moneyAdapter"/>-->
-<!--                <ref bean="cardAdapter"/>-->
-<!--            </set>-->
-<!--        </constructor-arg>-->
-<!--        <constructor-arg name="discountInterface" ref="discountByConvenience"/>-->
-<!--    </bean>-->
+<!--&lt;!&ndash;    <bean id = "conveniencePayService" class = "com.zerobase.convpay.service.ConveniencePayService">&ndash;&gt;-->
+<!--&lt;!&ndash;        <constructor-arg name = "paymentInterfaceSet">&ndash;&gt;-->
+<!--&lt;!&ndash;            <set>&ndash;&gt;-->
+<!--&lt;!&ndash;                <ref bean="moneyAdapter"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                <ref bean="cardAdapter"/>&ndash;&gt;-->
+<!--&lt;!&ndash;            </set>&ndash;&gt;-->
+<!--&lt;!&ndash;        </constructor-arg>&ndash;&gt;-->
+<!--&lt;!&ndash;        <constructor-arg name="discountInterface" ref="discountByConvenience"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    </bean>&ndash;&gt;-->
 
-<!--    <bean id="cardAdapter" class="com.zerobase.convpay.service.CardAdapter"/>-->
+<!--&lt;!&ndash;    <bean id="cardAdapter" class="com.zerobase.convpay.service.CardAdapter"/>&ndash;&gt;-->
 
-<!--    <bean id="moneyAdapter" class="com.zerobase.convpay.service.MoneyAdapter"/>-->
-<!--    <bean id="discountByConvenience" class="com.zerobase.convpay.service.DiscountByConvenience"/>-->
-<!--    <bean id="discountByPayMethod" class="com.zerobase.convpay.service.DiscountByPayMethod"/>-->
-</beans>
+<!--&lt;!&ndash;    <bean id="moneyAdapter" class="com.zerobase.convpay.service.MoneyAdapter"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    <bean id="discountByConvenience" class="com.zerobase.convpay.service.DiscountByConvenience"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    <bean id="discountByPayMethod" class="com.zerobase.convpay.service.DiscountByPayMethod"/>&ndash;&gt;-->
+<!--</beans>-->
